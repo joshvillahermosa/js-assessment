@@ -48,7 +48,7 @@ exports.asyncAnswers = {
         httpRequest.onreadystatechange = function () {
 
           // Gah, keep on forgetting this line
-          if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+          if (httpRequest.readyState === 4 && httpRequest.status === 200) {
 
             // Parse data
             var data = JSON.parse(httpRequest.response);
