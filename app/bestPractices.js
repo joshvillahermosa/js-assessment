@@ -8,11 +8,11 @@ exports = (typeof window === 'undefined') ? global : window;
 
 exports.bestPracticesAnswers = {
   globals : function() {
-    myObject = {
+    myObjectShouldNotbeCalledGlobal = {
       name : 'Jory'
     };
 
-    return myObject;
+    return myObjectShouldNotbeCalledGlobal;
   },
 
   functions : function(flag) {
