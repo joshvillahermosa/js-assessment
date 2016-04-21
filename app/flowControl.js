@@ -10,6 +10,30 @@ exports.flowControlAnswers = {
     //
     // otherwise the function should return the number, or false if no number
     // was provided or the value provided is not a number
+    var threeAndFiveTeigger = false;
+
+    if (num === undefined) {
+      return false;
+    }
+
+    if (typeof(num) !== 'number') {
+      return false;
+    }
+
+    if (((num % 3) === 0) && ((num % 5) === 0)) {
+      return 'fizzbuzz';
+      threeAndFiveTeigger = true;
+    }
+    
+    if (((num % 3) === 0) && (threeAndFiveTeigger === false)) {
+      return 'fizz';
+    }
+
+    if (((num % 5) === 0) &&  (threeAndFiveTeigger === false)) {
+      return 'buzz';
+    }
+
+    return num;
 
   }
 };
