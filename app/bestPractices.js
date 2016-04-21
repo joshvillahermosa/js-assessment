@@ -8,11 +8,11 @@ exports = (typeof window === 'undefined') ? global : window;
 
 exports.bestPracticesAnswers = {
   globals : function() {
-    myObject = {
+    myObjectNotGlobal = {
       name : 'Jory'
     };
 
-    return myObject;
+    return myObjectNotGlobal;
   },
 
   functions : function(flag) {
@@ -26,10 +26,19 @@ exports.bestPracticesAnswers = {
   },
 
   parseInt : function(num) {
-    return parseInt(num);
+
+    /**
+     * Notes: 
+     *
+     * The seocond parameter is the _radix_ (Mathimatical system). To be safe, 
+     * it is always good to default to 10 toi avoid confusion. For Best
+     * practicies 
+     */
+
+    return parseInt(num, 10);
   },
 
   identity : function(val1, val2) {
-
+    return val1 === val2;
   }
 };
