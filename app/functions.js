@@ -58,8 +58,12 @@ exports.functionsAnswers = {
     return a + b + c + d;
   },
 
-  callIt : function(fn) {
-
+  callIt : function(fn, a, b, c) {
+    if (c) {
+      return fn(a,b,c);
+    } else {
+      return fn(a,b);
+    }
   },
 
   partialUsingArguments : function(fn) {
