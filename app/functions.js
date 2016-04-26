@@ -66,8 +66,16 @@ exports.functionsAnswers = {
     }
   },
 
-  partialUsingArguments : function(fn) {
-
+  partialUsingArguments : function(fn, a, b, c) {
+    if (a && b && c) {
+      return fn.bind(null, a, b, c);
+    } else if (a && b) {
+      return fn.bind(null, a, b);
+    } else if (a) {
+      return fn.bind(null, a);
+    } else {
+      return fn;
+    }
   },
 
   curryIt : function(fn) {
