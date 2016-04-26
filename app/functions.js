@@ -33,11 +33,29 @@ exports.functionsAnswers = {
   },
 
   partial : function(fn, str1, str2) {
+    var newFn = fn.bind(null, str1, str2);
 
+    return newFn;
   },
 
-  useArguments : function() {
+  useArguments : function(a, b, c, d) {
+    if (a === undefined) {
+      return false;
+    }
 
+    if (b === undefined && c === undefined && d === undefined) {
+      return a;
+    }
+
+    if ( c === undefined && d === undefined) {
+      return a + b;
+    }
+
+    if (d === undefined) {
+      return a + b + c;
+    }
+
+    return a + b + c + d;
   },
 
   callIt : function(fn) {
